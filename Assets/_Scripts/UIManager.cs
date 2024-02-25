@@ -117,9 +117,11 @@ public class UIManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
+            
             Destroy(this.gameObject);
         }
 

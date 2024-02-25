@@ -3,7 +3,11 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _speed = 7f;
-    public Rigidbody Rigidbody => _rigidbody;
+    public Rigidbody Rigidbody => _rigidbody; // rigidbody e okuma izni saglar. Disaridan sadece okunabilir(get). Ancak degistirilemez
+    //cünkü set yoktur. Daha sıkı bir kapsülleme yöntemidir.
+
+   // [field: SerializeField] public Rigidbody _rigidbody { get; private set; } // burasi ise inspectorda gözükmesini saglar. disaridan okunabilir
+   // ve sınıf icinde degistirilebilir. Private set. 
     private Vector3 _inputVector;
 
     private void Update()
